@@ -1,5 +1,5 @@
 {% set name = "gitsummary" %}
-{% set version = "0.0.5" %}
+{% set version = "0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gitsummary-{{ version }}.tar.gz
-  sha256: 810e761d83f935d09173cd5b952a6f2d0ba864c3527b4470187c5f04b03ef5d7
+  sha256: d37a5fc0a2d9dd1a09929d22031641ccd178c36c912c8acb19cc625b0f4ef0ad
 
 build:
   noarch: python

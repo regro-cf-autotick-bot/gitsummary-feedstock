@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gitsummary-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gitsummary-{{ version }}.tar.gz
   sha256: d37a5fc0a2d9dd1a09929d22031641ccd178c36c912c8acb19cc625b0f4ef0ad
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
   run:
     - gitpython
-    - python >=3.9
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -30,6 +30,7 @@ test:
   requires:
     - pip
     - git
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Timothy-W-Hilton/gitsummary
